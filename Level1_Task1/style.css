@@ -33,7 +33,7 @@ nav ul li a:hover { color: #ff4d4d; }
     height: 100vh;
     width: 100%; /* Ապահովում է, որ բաժինը զբաղեցնի ամբողջ լայնությունը */
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
-                url('hero.jpg');
+                url('hero.png');
     background-size: cover;      /* Նկարը լրացնում է ամբողջ տարածքը՝ առանց ձգվելու */
     background-position: center; /* Միշտ կենտրոնացնում է նկարը */
     background-attachment: fixed; /* Ստեղծում է պրոֆեսիոնալ սահող (parallax) էֆեկտ */
