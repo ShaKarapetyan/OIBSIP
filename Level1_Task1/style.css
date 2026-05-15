@@ -77,32 +77,32 @@ nav ul li a:hover { color: #ff4d4d; }
 .destinations h2 { text-align: center; font-size: 36px; margin-bottom: 60px; }
 
 .grid {
-    display: flex;               /* Օգտագործում ենք Flexbox */
-    justify-content: center;      /* Կենտրոնացնում ենք քարտերը */
-    align-items: stretch;        /* Ստիպում ենք բոլոր քարտերին լինել նույն բարձրության */
-    flex-wrap: wrap;             /* Հեռախոսի վրա կտեղափոխվեն հաջորդ տող */
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    width: 280px;
-    height: 400px;               /* Բոլոր քարտերը կունենան նույն բարձրությունը */
-    display: flex;
-    flex-direction: column;      /* Տեքստը դասավորում ենք սյունակով */
-    justify-content: flex-end;   /* Տեքստը հրում ենք դեպի քարտի հատակը */
+    height: 480px;
     border-radius: 15px;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid #222;
+    transition: 0.5s;
 }
 
 .card:hover { transform: translateY(-10px); border-color: #ff4d4d; }
 
 .card-info {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    padding: 30px 20px;
     width: 100%;
-    padding: 20px;
-    text-align: center;          /* Անունները կլինեն կենտրոնում */
-    min-height: 80px;            /* Բոլոր տեքստային բլոկները կունենան նույն մինիմալ բարձրությունը */
+    transform: translateY(80px); /* Թաքցնում ենք տեքստի մի մասը */
+    transition: 0.4s;
 }
 
 .card:hover .card-info { transform: translateY(0); }
