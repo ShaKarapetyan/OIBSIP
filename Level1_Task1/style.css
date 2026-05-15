@@ -1,16 +1,61 @@
-/* Ընդհանուր կարգավորումներ */
+/* Ընդհանուր ստանդարտներ */
+html {
+    scroll-behavior: smooth; /* Սահուն անցումների համար */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #0d0d0d;
-    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
     line-height: 1.6;
 }
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 5%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span { color: #ff4d4d; }
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 20px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: #ff4d4d; }
 
 /* Hero Section */
 .hero {
@@ -20,40 +65,46 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 10%;
 }
 
 .hero-content h1 {
-    font-size: 70px;
-    font-weight: 900;
-    margin-bottom: 10px;
-    letter-spacing: 3px;
+    font-size: clamp(32px, 8vw, 70px);
+    margin-bottom: 20px;
 }
 
-.hero-content h1 span {
-    color: #ff4d4d;
+.hero-content h1 span { color: #ff4d4d; }
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
 }
+
+.btn {
+    padding: 15px 35px;
+    background: #ff4d4d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover { background: #cc0000; transform: scale(1.1); }
 
 /* Destinations Section */
-.destinations {
-    padding: 80px 10%;
-    background-color: #0d0d0d;
-}
+.destinations { padding: 100px 5%; text-align: center; }
 
-.destinations h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #ffffff;
-}
+.destinations h2 { font-size: 36px; margin-bottom: 50px; }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
 .card {
@@ -61,36 +112,43 @@ body {
     border-radius: 15px;
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: flex-end;
-    padding: 25px;
-    text-decoration: none;
-    transition: transform 0.4s ease;
-    border: 1px solid #333;
+    transition: 0.5s;
+    border: 1px solid #222;
 }
 
-.card:hover {
-    transform: translateY(-15px);
-    border-color: #ff4d4d;
+.card-info {
+    background: rgba(0,0,0,0.8);
+    padding: 20px;
+    width: 100%;
+    transform: translateY(100px);
+    transition: 0.5s;
 }
 
-.card h3 {
-    color: #fff;
-    font-size: 24px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,1);
-    z-index: 2;
-}
+.card:hover .card-info { transform: translateY(0); }
 
-/* Թարմացված հուսալի նկարներ */
-.card1 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Wings_of_Tatev_2.jpg/640px-Wings_of_Tatev_2.jpg'); }
-.card2 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Sevanavank_Armenia_mdf.jpg/640px-Sevanavank_Armenia_mdf.jpg'); }
-.card3 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Garni_Temple_Armenia.jpg/640px-Garni_Temple_Armenia.jpg'); }
-.card4 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Noravank_monastery_Armenia.jpg/640px-Noravank_monastery_Armenia.jpg'); }
+.card h3 { color: #ff4d4d; margin-bottom: 10px; }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #000;
-    font-size: 14px;
-    color: #777;
+.card p { font-size: 14px; color: #ccc; }
+
+/* Նկարների հղումներ (Վիքիմեդիա - ամենահուսալի) */
+.card1 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Wings_of_Tatev_2.jpg/640px-Wings_of_Tatev_2.jpg'); }
+.card2 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Sevanavank_Armenia_mdf.jpg/640px-Sevanavank_Armenia_mdf.jpg'); }
+.card3 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Garni_Temple_Armenia.jpg/640px-Garni_Temple_Armenia.jpg'); }
+.card4 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Noravank_monastery_Armenia.jpg/640px-Noravank_monastery_Armenia.jpg'); }
+
+/* About Section */
+.about { padding: 100px 10%; background: #050505; text-align: center; }
+.about h2 { margin-bottom: 20px; color: #ff4d4d; }
+.about p { max-width: 800px; margin: 0 auto; color: #aaa; }
+
+footer { padding: 40px; text-align: center; border-top: 1px solid #222; font-size: 12px; color: #555; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Պարզության համար հեռախոսի վրա մենյուն թաքցնում ենք */
+    .hero-content h1 { font-size: 40px; }
 }
