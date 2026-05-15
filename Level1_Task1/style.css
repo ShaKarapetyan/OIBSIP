@@ -88,23 +88,41 @@ nav ul li a:hover { opacity: 0.7; }
 }
 
 .btn {
-    padding: 18px 45px;
-    background: var(--arm-blue);
-    color: #fff;
+    display: inline-block;
+    padding: 16px 40px; /* Ավելի հավասարակշռված չափսեր */
+    background-color: var(--arm-red); /* Նախնական գույնը՝ Կարմիր */
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 4px;
     font-weight: 800;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: 0.4s;
-    box-shadow: 0 10px 20px rgba(25, 118, 210, 0.3);
-    display: inline-block;
+    
+    /* Նուրբ բորդեր և կլորացում */
+    border: 2px solid transparent; 
+    border-radius: 50px; /* Կլորավուն (pill-shape) ոճ, որն ավելի ժամանակակից է */
+    
+    /* Սահուն անցում և ստվեր */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 15px rgba(211, 47, 47, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn:hover { 
-    background: var(--arm-red); 
-    transform: translateY(-5px); 
-    box-shadow: 0 15px 30px rgba(211, 47, 47, 0.4);
+/* --- Հովեր (Hover) էֆեկտ --- */
+.btn:hover {
+    background-color: var(--arm-blue); /* Դառնում է Թագավորական Կապույտ */
+    transform: translateY(-3px); /* Նուրբ բարձրացում */
+    box-shadow: 0 12px 20px rgba(25, 118, 212, 0.4); /* Կապույտ ստվեր */
+    border-color: var(--arm-orange); /* Ծիրանագույն բարակ եզրագիծ հովերի ժամանակ */
+    letter-spacing: 3px; /* Տառերը մի փոքր բացվում են՝ տալիս են «շնչող» էֆեկտ */
+}
+
+/* Սեղմելու էֆեկտ (Active) */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(25, 118, 212, 0.2);
 }
 
 /* --- 4. Destinations (Այստեղ են հիմնական ուղղումները) --- */
