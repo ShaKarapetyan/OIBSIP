@@ -145,13 +145,14 @@ nav ul li a:hover { opacity: 0.7; }
 
 .card {
     height: 550px;
-    border-radius: 20px; /* Ավելի կլորավուն ու ժամանակակից */
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end; /* Վերնագիրը միշտ կպած կլինի ներքևին */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s ease;
     cursor: pointer;
 } 
 
@@ -162,18 +163,16 @@ nav ul li a:hover { opacity: 0.7; }
     top: 0; left: 0; width: 100%; height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.8s ease;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
     z-index: 1;
-} 
+}
 
 .card1::before { background-image: url('tatev.jpg'); }
 .card2::before { background-image: url('sevan.jpg'); }
 .card3::before { background-image: url('garni.jpg'); }
 .card4::before { background-image: url('noravank.jpg'); } 
 
-.card:hover::before {
-    transform: scale(1.1); /* Նկարը մեծանում է */
-}
+.card:hover::before { transform: scale(1.1); } /* Նկարը մեծանում է */
 
 .card:hover { 
     transform: translateY(-10px);
@@ -181,48 +180,59 @@ nav ul li a:hover { opacity: 0.7; }
 } 
 
 /* Յուրաքանչյուր քարտին տալիս ենք իր եզրագծի գույնը hover-ի ժամանակ */
+.card:hover { transform: translateY(-10px); }
 .card1:hover { border-color: var(--arm-red); }
 .card2:hover { border-color: var(--arm-blue); }
 .card3:hover { border-color: var(--arm-orange); }
-.card4:hover { border-color: #ffffff; }
+.card4:hover { border-color: #fff; }
 
 .card-info {
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 30px 20px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px); /* Ապակու էֆեկտ */
-    border-top: 2px solid var(--arm-orange);
-    transform: translateY(100px); /* Սկզբում թաքնված է նկարագրությունը */
-    transition: all 0.5s ease;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 70%, transparent 100%);
+    backdrop-filter: blur(5px);
+    
+    /* Այս բարձրությունը ապահովում է վերնագրերի հավասարությունը */
+    height: 120px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.4s ease-in-out;
 } 
 
 .card:hover .card-info {
-    transform: translateY(0); /* Բարձրանում է վերև */
-    background: rgba(0, 0, 0, 0.8);
+    height: 220px; 
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .card h3 { 
     color: var(--arm-orange); 
-    font-size: 28px; 
+    font-size: 26px; 
     font-weight: 900;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+    /* Սա երաշխավորում է, որ նույնիսկ 1 տողանոց վերնագիրը նույն տեղում լինի */
+    line-height: 1.2;
+    min-height: 32px; 
 }
 
 .card p { 
-    font-size: 15px; 
+    font-size: 14px; 
     color: #ffffff; 
-    line-height: 1.6;
+    line-height: 1.5;
     font-weight: 500;
+    
+    /* Տեքստը սկզբում թաքնված է */
     opacity: 0;
-    transition: opacity 0.4s ease 0.2s;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
 }
 
 /* Մկնիկը պահելիս վերնագիրը մնում է տեղում, տեքստը հայտնվում է */
 .card:hover p { 
     opacity: 1; 
+    transform: translateY(0);
 }
 
 .card1 { background-image: url('tatev.jpg'); }
@@ -249,6 +259,6 @@ footer {
 /* Ռեսպոնսիվություն */
 @media (max-width: 768px) {
     .card { height: 450px; }
-    .card-info { transform: translateY(0); background: rgba(0,0,0,0.7); }
-    .card p { opacity: 1; }
+    .card-info { height: auto; min-height: 150px; }
+    .card p { opacity: 1; transform: translateY(0); }
 }
