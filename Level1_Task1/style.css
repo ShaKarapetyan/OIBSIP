@@ -1,8 +1,8 @@
 /* --- 1. Փոփոխականներ և Հիմնական ոճեր --- */
 :root {
-    --arm-red: #D32F2F;   /* Նռան կարմիր */
-    --arm-blue: #1976D2;  /* Թագավորական կապույտ */
-    --arm-orange: #FF9800; /* Ծիրանագույն */
+    --arm-red: #D32F2F;   
+    --arm-blue: #1976D2;  
+    --arm-orange: #FF9800; 
     --bg-dark: #0a0a0a;
 }
 
@@ -14,6 +14,7 @@ body {
     background-color: var(--bg-dark);
     color: #ffffff;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 /* --- 2. Նավիգացիա --- */
@@ -25,31 +26,38 @@ header {
     padding: 15px 5%;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--arm-red); /* Կարմիր գիծ վերևում */
+    border-bottom: 2px solid var(--arm-red);
 }
 
 nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 26px; font-weight: 900; letter-spacing: 3px; }
-.logo span { color: var(--arm-orange); } /* Նարնջագույն լոգոյի վերջավորություն */
+
+/* Լոգոյի ոճերը */
+.logo { font-size: 26px; font-weight: 900; letter-spacing: 3px; display: flex; }
+.logo .arm { color: var(--arm-red); }
+.logo .enia { color: #ffffff; }
 
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 30px; }
 nav ul li a { 
     text-decoration: none; 
-    color: #fff; 
     font-size: 14px; 
     font-weight: 700;
     text-transform: uppercase;
     transition: 0.3s; 
 }
-nav ul li a:hover { color: var(--arm-blue); } /* Կապույտ հովեր */
+
+/* Մենյուի կոնկրետ գույները */
+.nav-red { color: var(--arm-red); }
+.nav-blue { color: var(--arm-blue); }
+.nav-orange { color: var(--arm-orange); }
+
+nav ul li a:hover { opacity: 0.7; }
 
 /* --- 3. Hero Section --- */
 .hero {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), 
-                url('hero.png'); /* Օգտագործիր մեր նոր hero.jpg-ն */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('hero.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -63,25 +71,28 @@ nav ul li a:hover { color: var(--arm-blue); } /* Կապույտ հովեր */
 .hero-content h1 {
     font-size: clamp(40px, 8vw, 85px);
     font-weight: 900;
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: -2px;
 }
 
-.hero-content h1 span { color: var(--arm-orange); } /* ՀԱՅԱՍՏԱՆԸ դարձավ նարնջագույն */
+/* ՀԱՅԱՍՏԱՆԸ բառի անբաժանելիությունը և գույները */
+.word-wrapper { white-space: nowrap; display: inline-block; }
+.flag-red { color: var(--arm-red); }
+.flag-blue { color: var(--arm-blue); }
+.flag-orange { color: var(--arm-orange); }
 
 .hero-content p {
     font-size: 1.2rem;
     font-weight: 300;
     max-width: 700px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
     color: #f0f0f0;
 }
 
 .btn {
     padding: 18px 45px;
-    background: var(--arm-blue); /* Կապույտ կոճակ */
+    background: var(--arm-blue);
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -90,10 +101,11 @@ nav ul li a:hover { color: var(--arm-blue); } /* Կապույտ հովեր */
     letter-spacing: 2px;
     transition: 0.4s;
     box-shadow: 0 10px 20px rgba(25, 118, 210, 0.3);
+    display: inline-block;
 }
 
 .btn:hover { 
-    background: var(--arm-red); /* Կոճակը դառնում է կարմիր հովերի ժամանակ */
+    background: var(--arm-red); 
     transform: translateY(-5px); 
     box-shadow: 0 15px 30px rgba(211, 47, 47, 0.4);
 }
@@ -130,7 +142,7 @@ nav ul li a:hover { color: var(--arm-blue); } /* Կապույտ հովեր */
 
 .card:hover { 
     transform: translateY(-15px); 
-    border-color: var(--arm-orange); /* Նարնջագույն եզրագիծ */
+    border-color: var(--arm-orange);
 }
 
 .card-info {
@@ -166,11 +178,12 @@ footer {
     letter-spacing: 1px;
 }
 
-/* --- Responsive --- */
+/* --- Responsive (Ռեսպոնսիվ) --- */
 @media (max-width: 768px) {
     nav ul { display: none; }
-    .hero { padding: 0 5%; }
-    .hero-content h1 { font-size: 45px; }
+    .hero { padding: 0 5%; background-attachment: scroll; }
+    .hero-content h1 { font-size: 40px; }
+    .word-wrapper { font-size: 10vw; } /* ՀԱՅԱՍՏԱՆԸ բառի չափը փոքր էկրանների համար */
     .about { padding: 80px 8%; }
 }
 
