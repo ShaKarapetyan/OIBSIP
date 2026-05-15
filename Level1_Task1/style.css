@@ -31,7 +31,6 @@ header {
 
 nav { display: flex; justify-content: space-between; align-items: center; }
 
-/* Լոգոյի ոճերը */
 .logo { font-size: 26px; font-weight: 900; letter-spacing: 3px; display: flex; }
 .logo .arm { color: var(--arm-red); }
 .logo .enia { color: #ffffff; }
@@ -46,7 +45,6 @@ nav ul li a {
     transition: 0.3s; 
 }
 
-/* Մենյուի կոնկրետ գույները */
 .nav-red { color: var(--arm-red); }
 .nav-blue { color: var(--arm-blue); }
 .nav-orange { color: var(--arm-orange); }
@@ -76,7 +74,6 @@ nav ul li a:hover { opacity: 0.7; }
     text-transform: uppercase;
 }
 
-/* ՀԱՅԱՍՏԱՆԸ բառի անբաժանելիությունը և գույները */
 .word-wrapper { white-space: nowrap; display: inline-block; }
 .flag-red { color: var(--arm-red); }
 .flag-blue { color: var(--arm-blue); }
@@ -110,7 +107,7 @@ nav ul li a:hover { opacity: 0.7; }
     box-shadow: 0 15px 30px rgba(211, 47, 47, 0.4);
 }
 
-/* --- 4. Destinations --- */
+/* --- 4. Destinations (Այստեղ են հիմնական ուղղումները) --- */
 .destinations { padding: 120px 8%; background: var(--bg-dark); }
 .destinations h2 { 
     text-align: center; 
@@ -135,7 +132,8 @@ nav ul li a:hover { opacity: 0.7; }
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column; /* Ավելացվել է */
+    justify-content: flex-end; /* Ապահովում է տեքստի դիրքը ներքևում */
     border: 1px solid rgba(255,255,255,0.1);
     transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -146,17 +144,38 @@ nav ul li a:hover { opacity: 0.7; }
 }
 
 .card-info {
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
-    padding: 40px 25px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    padding: 30px 25px;
     width: 100%;
-    transform: translateY(60px);
-    transition: 0.4s;
+    /* Հաստատուն բարձրություն, որպեսզի վերնագրերը հավասարվեն */
+    height: 180px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: 0.4s ease;
 }
 
-.card:hover .card-info { transform: translateY(0); }
-.card h3 { color: var(--arm-orange); font-size: 26px; margin-bottom: 10px; font-weight: 800; }
-.card p { font-size: 14px; color: #eee; opacity: 0; transition: 0.4s; line-height: 1.5; }
-.card:hover p { opacity: 1; }
+.card h3 { 
+    color: var(--arm-orange); 
+    font-size: 26px; 
+    margin-bottom: 12px; 
+    font-weight: 800;
+    /* Վերնագրի համար նվազագույն բարձրություն */
+    min-height: 35px; 
+}
+
+.card p { 
+    font-size: 14px; 
+    color: #eee; 
+    opacity: 0; 
+    transition: 0.4s; 
+    line-height: 1.5;
+}
+
+/* Մկնիկը պահելիս վերնագիրը մնում է տեղում, տեքստը հայտնվում է */
+.card:hover p { 
+    opacity: 1; 
+}
 
 .card1 { background-image: url('tatev.jpg'); }
 .card2 { background-image: url('sevan.jpg'); }
@@ -178,13 +197,15 @@ footer {
     letter-spacing: 1px;
 }
 
-/* --- Responsive (Ռեսպոնսիվ) --- */
+/* --- Responsive --- */
 @media (max-width: 768px) {
     nav ul { display: none; }
     .hero { padding: 0 5%; background-attachment: scroll; }
     .hero-content h1 { font-size: 40px; }
-    .word-wrapper { font-size: 10vw; } /* ՀԱՅԱՍՏԱՆԸ բառի չափը փոքր էկրանների համար */
+    .word-wrapper { font-size: 10vw; }
     .about { padding: 80px 8%; }
+    /* Հեռախոսների վրա բարձրությունը կարող է մի փոքր ավելանալ, որ տեքստը տեղավորվի */
+    .card-info { height: auto; min-height: 160px; } 
 }
 
 
