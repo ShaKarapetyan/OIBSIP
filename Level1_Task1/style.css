@@ -31,15 +31,21 @@ nav ul li a:hover { color: #ff4d4d; }
 /* 3. Hero Section - Ուղղված տեքստով */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                url('hero.jpg'); /* Քո ներբեռնած նկարը */
-    background-size: cover;
-    background-position: center;
+    width: 100%; /* Ապահովում է, որ բաժինը զբաղեցնի ամբողջ լայնությունը */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                url('hero.jpg');
+    background-size: cover;      /* Նկարը լրացնում է ամբողջ տարածքը՝ առանց ձգվելու */
+    background-position: center; /* Միշտ կենտրոնացնում է նկարը */
+    background-attachment: fixed; /* Ստեղծում է պրոֆեսիոնալ սահող (parallax) էֆեկտ */
+    background-repeat: no-repeat; /* Կանխում է նկարի կրկնությունը */
+    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 15%;
+    overflow: hidden; /* Թույլ չի տալիս, որ նկարի շերտերը դուրս գան սահմաններից */
 }
 
 .hero-content h1 {
