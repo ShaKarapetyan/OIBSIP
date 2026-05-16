@@ -255,9 +255,41 @@ footer {
     letter-spacing: 1px;
 }
 
-/* --- Responsive --- */
-/* Ռեսպոնսիվություն */
+/* --- Responsive (Ռեսպոնսիվ ուղղումներ հեռախոսների համար) --- */
 @media (max-width: 768px) {
+    /* 1. Նվազեցնում ենք header-ի կողային բացվածքը */
+    header {
+        padding: 15px 3%;
+    }
+
+    /* 2. Լոգոն մի փոքր փոքրացնում ենք, որ տեղ բացվի */
+    .logo {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    /* 3. Ստիպում ենք, որ մենյուն ցույց տա բոլոր 3 կետերը */
+    nav ul { 
+        display: flex !important; 
+    }
+
+    /* 4. Մոտեցնում ենք կոճակները իրար */
+    nav ul li { 
+        margin-left: 12px; 
+    }
+
+    /* 5. Փոքրացնում ենք տառաչափը, որ տեղավորվի iPhone-ի նեղ էկրանին */
+    nav ul li a {
+        font-size: 11px;
+        letter-spacing: 0px;
+    }
+
+    /* 6. Քո ունեցած քարտերի և հերոսական մասի կարգավորումները */
+    .hero { padding: 0 5%; background-attachment: scroll; }
+    .hero-content h1 { font-size: 38px; }
+    .word-wrapper { font-size: 10vw; }
+    .about { padding: 80px 8%; }
+    
     .card { height: 450px; }
     .card-info { height: auto; min-height: 150px; }
     .card p { opacity: 1; transform: translateY(0); }
