@@ -1,1 +1,18 @@
-Landing Page Project
+PROJECT DETAILS (TASK 1)
+---------------------------------
+Company: Oasis Infobyte
+Track: Web Development Internship
+Batch: May 2026
+
+Task: Level 1, Task 1 - Landing Page (Armenia Tourism)
+Author: Shahen Karapetyan
+
+Resources & Media Used:
+- Fonts: Google Fonts (Montserrat)
+- Images: Tatev Monastery, Sevanavank, Garni Temple, Noravank
+
+Key Features & Notes:
+- The website is fully responsive and optimized for mobile screens, including iPhone 13.
+- Card titles are perfectly aligned using CSS Flexbox and fixed height attributes.
+- Smooth image zoom and Glassmorphism blur effects have been added on hover/tap.
+---------------------------------
