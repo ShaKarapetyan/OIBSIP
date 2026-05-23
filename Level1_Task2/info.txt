@@ -1,1 +1,22 @@
-Portfolio Projec
+PROJECT DETAILS (TASK 2)
+Company: Oasis Infobyte
+Track: Web Development Internship
+Batch: May 2026
+
+Task: Level 1, Task 2 - Personal Portfolio Website
+Author: Shahen Karapetyan
+
+Technologies Used:
+- Core Library: React.js (TypeScript)
+- Build Tool: Vite
+- UI Framework: Chakra UI (for accessible and modular UI components)
+- Internationalization: i18next (for multi-language support)
+- Deployment: Cloudflare Pages
+
+Key Features & Notes:
+- Component-Driven Architecture: Developed using a clean, component-based structure, leveraging Chakra UI’s robust layout primitives for high modularity.
+- Responsive & Accessible UI: Fully responsive interface, optimized for seamless usability across all devices (mobile, tablet, desktop).
+- Advanced Localization: Integrated i18n support to enable multi-language capabilities, demonstrating scalable code architecture.
+- Performance-Oriented Build: Utilized Vite for rapid development and highly optimized production builds, ensuring fast load times.
+- Optimized Deployment: Deployed on Cloudflare Pages, utilizing its global edge network for superior latency performance and reliability.
+- Project Showcase: A dedicated, scalable section highlighting internship milestones and personal project details.
