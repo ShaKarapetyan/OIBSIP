@@ -1,0 +1,4 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Սա ապահովում է, որ հեդերը չփակի բաժնի վերնագիրը */
+}
