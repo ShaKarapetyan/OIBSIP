@@ -36,16 +36,17 @@ function App() {
 
   return (
     <div style={{
-      height: '100vh',
-      width: '100vw',
+      minHeight: '100dvh',      
+      width: '100%', 
       background: 'radial-gradient(circle at top right, #0f172a 0%, #020617 100%)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       fontFamily: '"Inter", "Segoe UI", sans-serif',
-      padding: isMobile ? '12px' : '24px',
+      padding: isMobile ? '20px 12px' : '24px',
       boxSizing: 'border-box',
-      overflow: 'hidden' 
+      overflowY: 'auto',          
+      overflowX: 'hidden'        
     }}>
       <div style={{
         width: '100%',
