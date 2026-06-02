@@ -41,7 +41,7 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({
         letterSpacing: '0.15em',
         margin: '0 0 12px 0'
       }}>
-        ՓՈԽԱՐԿՄԱՆ ԱՐԴՅՈՒՆՔՆԵՐԸ
+        Conversion Results
       </p>
       
       <div style={{
