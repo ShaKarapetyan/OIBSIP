@@ -45,7 +45,7 @@ function App() {
       fontFamily: '"Inter", "Segoe UI", sans-serif',
       padding: isMobile ? '12px' : '24px',
       boxSizing: 'border-box',
-      overflow: 'hidden' // Բացառում է ցանկացած տեսակի սքրոլ գլխավոր էջում
+      overflow: 'hidden' 
     }}>
       <div style={{
         width: '100%',
@@ -69,7 +69,7 @@ function App() {
             gap: '12px',
             letterSpacing: '-0.02em'
           }}>
-            <FaThermometerHalf style={{ color: '#38bdf8' }} /> Ջերմաստիճան
+            <FaThermometerHalf style={{ color: '#38bdf8' }} /> Temperature
           </h1>
           <p style={{ color: '#94a3b8', fontSize: isMobile ? '0.8rem' : '0.95rem', fontWeight: '400', margin: 0 }}>
             Modern, Fast, and Responsive Temperature Converter
