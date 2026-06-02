@@ -1,1 +1,23 @@
-Temperature Converter Project
+PROJECT DETAILS (TASK 3)
+Company: Oasis Infobyte
+Track: Web Development Internship
+Batch: May 2026
+Task: Level 1, Task 3 - Temperature Converter
+Author: Shahen Karapetyan
+
+Technologies Used:
+
+-Core Library: React.js (TypeScript)
+-Build Tool: Vite
+-UI Framework: Chakra UI (for modular and accessible components)
+-UI Assets: React Icons
+-Logic Layer: Custom TypeScript logic (conversionLogics.ts)
+-Deployment: Cloudflare Pages
+
+Key Features & Notes:
+
+-Interactive Conversion: Real-time temperature conversion (Celsius, Fahrenheit, Kelvin) powered by robust and accurate TypeScript logic.
+-Component-Driven UI: Built with Chakra UI to ensure a modern, consistent, and highly accessible user interface across all devices.
+-Modular Architecture: Utilized a clean separation of concerns, isolating application business logic in utility files and UI structure in reusable components.
+-Performance-Oriented: Optimized build process via Vite, ensuring fast rendering and minimal load times.
+-Scalable Deployment: Deployed on Cloudflare Pages, leveraging edge network capabilities for superior performance and reliability.
