@@ -32,7 +32,6 @@ function App() {
     setResults(converted);
   }, [inputValue, fromUnit]);
 
-  // Սահմանում ենք ռեսպոնսիվ սահմանը հեռախոսների համար
   const isMobile = windowWidth < 640;
 
   return (
@@ -57,7 +56,7 @@ function App() {
         boxSizing: 'border-box'
       }}>
         
-        {/* Վերնագիր */}
+      
         <div style={{ textAlign: 'center' }}>
           <h1 style={{
             fontSize: isMobile ? '1.6rem' : '2.4rem',
@@ -73,11 +72,10 @@ function App() {
             <FaThermometerHalf style={{ color: '#38bdf8' }} /> Ջերմաստիճան
           </h1>
           <p style={{ color: '#94a3b8', fontSize: isMobile ? '0.8rem' : '0.95rem', fontWeight: '400', margin: 0 }}>
-            Արդիական, արագ և ռեսպոնսիվ փոխարկման համակարգ
+            Modern, Fast, and Responsive Temperature Converter
           </p>
         </div>
 
-        {/* Գլխավոր Ապակե Քարտ */}
         <div style={{
           backgroundColor: 'rgba(30, 41, 59, 0.4)',
           backdropFilter: 'blur(16px)',
@@ -93,7 +91,6 @@ function App() {
             flexDirection: isMobile ? 'column' : 'row',
             gap: isMobile ? '16px' : '20px'
           }}>
-            {/* Ներմուծման դաշտ */}
             <div style={{ flex: 1 }}>
               <label style={{
                 display: 'block',
@@ -103,7 +100,7 @@ function App() {
                 fontSize: '0.7rem',
                 letterSpacing: '0.1em'
               }}>
-                ՄՈՒՏՔԱԳՐԵԼ ԱՐԺԵՔԸ
+                Enter Value
               </label>
               <input
                 type="number"
@@ -135,7 +132,6 @@ function App() {
               />
             </div>
 
-            {/* Միավորի ընտրություն */}
             <div style={{ flex: 1 }}>
               <label style={{
                 display: 'block',
@@ -145,7 +141,7 @@ function App() {
                 fontSize: '0.7rem',
                 letterSpacing: '0.1em'
               }}>
-                ԵԼՄԱՆ ՄԻԱՎՈՐ
+                Output Unit
               </label>
               <select
                 value={fromUnit}
@@ -173,7 +169,6 @@ function App() {
           </div>
         </div>
 
-        {/* Արդյունքներ */}
         <ResultDisplay
           celsius={results.celsius}
           fahrenheit={results.fahrenheit}
